@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Windows.Forms;
+using TikaOnDotNet.TextExtraction;
 
 namespace LOEWP_generator
 {
@@ -144,14 +145,20 @@ namespace LOEWP_generator
         private void btnSelectPDF_Click(object sender, EventArgs e)
         {
             //user browses to folder and selects file
-            fileSelected = new OpenFileDialog();
+            OpenFileDialog fileSelected = new OpenFileDialog();
+
             fileSelected.Filter = "PDF Files (*.pdf)|*.pdf";
             fileSelected.Multiselect = false;
 
             if (fileSelected.ShowDialog() == DialogResult.OK)
             {
-                GenerateLOEWP();
+                string filepath = fileSelected.FileName.ToString();
+                TextExtractor te = new TextExtractor();
+                string pdfText = te.Extract(filepath).ToString();
+                rtbOutputPreview.Text = pdfText;
+                // GenerateLOEWP();
             }
+
         }
     }
 }
