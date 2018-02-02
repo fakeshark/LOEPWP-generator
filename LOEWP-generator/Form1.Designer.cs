@@ -38,6 +38,9 @@
             this.btnSelectPDF = new System.Windows.Forms.Button();
             this.lblSelectedPdfTM = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.dtpDateOfIssue = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblJulianDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSelectTM
@@ -64,9 +67,9 @@
             this.rtbOutputPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbOutputPreview.Location = new System.Drawing.Point(32, 117);
+            this.rtbOutputPreview.Location = new System.Drawing.Point(32, 164);
             this.rtbOutputPreview.Name = "rtbOutputPreview";
-            this.rtbOutputPreview.Size = new System.Drawing.Size(833, 309);
+            this.rtbOutputPreview.Size = new System.Drawing.Size(833, 401);
             this.rtbOutputPreview.TabIndex = 2;
             this.rtbOutputPreview.Text = "";
             // 
@@ -74,7 +77,7 @@
             // 
             this.btnExportCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportCode.Enabled = false;
-            this.btnExportCode.Location = new System.Drawing.Point(744, 432);
+            this.btnExportCode.Location = new System.Drawing.Point(744, 571);
             this.btnExportCode.Name = "btnExportCode";
             this.btnExportCode.Size = new System.Drawing.Size(121, 40);
             this.btnExportCode.TabIndex = 3;
@@ -84,7 +87,7 @@
             // lblOutputPreview
             // 
             this.lblOutputPreview.AutoSize = true;
-            this.lblOutputPreview.Location = new System.Drawing.Point(29, 101);
+            this.lblOutputPreview.Location = new System.Drawing.Point(32, 148);
             this.lblOutputPreview.Name = "lblOutputPreview";
             this.lblOutputPreview.Size = new System.Drawing.Size(157, 13);
             this.lblOutputPreview.TabIndex = 4;
@@ -93,7 +96,7 @@
             // btnCopyToClipboard
             // 
             this.btnCopyToClipboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopyToClipboard.Location = new System.Drawing.Point(617, 432);
+            this.btnCopyToClipboard.Location = new System.Drawing.Point(617, 571);
             this.btnCopyToClipboard.Name = "btnCopyToClipboard";
             this.btnCopyToClipboard.Size = new System.Drawing.Size(121, 40);
             this.btnCopyToClipboard.TabIndex = 5;
@@ -132,7 +135,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(32, 432);
+            this.button2.Location = new System.Drawing.Point(32, 571);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 40);
             this.button2.TabIndex = 9;
@@ -140,11 +143,41 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.QuitApplication);
             // 
+            // dtpDateOfIssue
+            // 
+            this.dtpDateOfIssue.Location = new System.Drawing.Point(32, 101);
+            this.dtpDateOfIssue.Name = "dtpDateOfIssue";
+            this.dtpDateOfIssue.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateOfIssue.TabIndex = 10;
+            this.dtpDateOfIssue.ValueChanged += new System.EventHandler(this.dtpDateOfIssue_ValueChanged);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(32, 85);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(72, 13);
+            this.lblDate.TabIndex = 11;
+            this.lblDate.Text = "Date of issue:";
+            // 
+            // lblJulianDate
+            // 
+            this.lblJulianDate.AutoSize = true;
+            this.lblJulianDate.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblJulianDate.Location = new System.Drawing.Point(238, 107);
+            this.lblJulianDate.Name = "lblJulianDate";
+            this.lblJulianDate.Size = new System.Drawing.Size(75, 13);
+            this.lblJulianDate.TabIndex = 12;
+            this.lblJulianDate.Text = "Julian Date: ...";
+            // 
             // frmLOEWP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 504);
+            this.ClientSize = new System.Drawing.Size(898, 643);
+            this.Controls.Add(this.lblJulianDate);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.dtpDateOfIssue);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblSelectedPdfTM);
             this.Controls.Add(this.btnSelectPDF);
@@ -175,6 +208,9 @@
         private System.Windows.Forms.Button btnSelectPDF;
         private System.Windows.Forms.Label lblSelectedPdfTM;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtpDateOfIssue;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblJulianDate;
     }
 }
 
